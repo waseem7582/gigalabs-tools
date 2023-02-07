@@ -198,7 +198,7 @@ class xuanxuanMessage extends messageModel
                 $contentData->extra = is_array($extra) ? $extra : '';
 
                 $content = json_encode($contentData);
-                $avatarUrl = $server . $this->app->getWebRoot() . 'favicon.ico';
+                $avatarUrl = $server . $this->app->getWebRoot() . 'theme/default/images/main/gigalablogo.webp';
                 if($target && ($objectType == 'bug' || $objectType == 'task' || $objectType == 'story' || $objectType == 'feedback')) $this->loadModel('im')->messageCreateNotify($target, $title, $subtitle = '', $content, $contentType = 'object', $url, $actions = array(), $sender = array('id' => 'zentao', 'realname' => $this->lang->message->sender, 'name' => $this->lang->message->sender, 'avatar' => $avatarUrl));
 
                 if($objectType == 'mr' and is_array($this->lang->message->mr->$actionType) and !empty($object->assignee))

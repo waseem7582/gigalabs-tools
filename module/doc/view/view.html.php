@@ -107,7 +107,7 @@ js::set('docID', $doc->id);
                   if(isset($out[1][0])) $title = $out[1][0];
 
                   echo "<div id='urlCard'>";
-                  echo "<div class='url-icon'><img src='{$urlDomain}/favicon.ico' width='45' height='45' /></div>";
+                  echo "<div class='url-icon'><img src='{$urlDomain}/theme/default/images/main/gigalablogo.webp' width='45' height='45' /></div>";
                   echo "<div class='url-content'>";
                   echo "<div class='url-title'>{$title}</div>";
                   echo "<div class='url-href'>" . html::a($url, $url, '_target') . "</div>";
