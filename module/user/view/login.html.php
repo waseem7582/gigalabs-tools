@@ -92,26 +92,6 @@ if(empty($config->notMd5Pwd))js::import($jsRoot . 'md5.js');
         </div>
       </div>
       <?php endif;?>
-      <?php if(!empty($this->config->global->showDemoUsers)):?>
-      <?php
-      $demoPassword = '123456';
-      $md5Password  = md5('123456');
-      $demoUsers    = 'productManager,projectManager,dev1,dev2,dev3,tester1,tester2,tester3,testManager';
-      $demoUsers    = $this->dao->select('account,password,realname')->from(TABLE_USER)->where('account')->in($demoUsers)->andWhere('deleted')->eq(0)->andWhere('password')->eq($md5Password)->fetchAll('account');
-      ?>
-      <footer>
-        <span><?php echo $lang->user->loginWithDemoUser;?></span>
-        <?php
-        $link  = inlink('login');
-        $link .= strpos($link, '?') !== false ? '&' : '?';
-        foreach($demoUsers as $demoAccount => $demoUser)
-        {
-            if($demoUser->password != $md5Password) continue;
-            echo html::a($link . "account={$demoAccount}&password=" . md5($md5Password . $this->session->rand), $demoUser->realname);
-        }
-        ?>
-      </footer>
-      <?php endif;?>
     </div>
     <div id="info" class="table-row">
       <div class="table-col text-middle text-center">

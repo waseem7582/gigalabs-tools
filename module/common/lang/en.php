@@ -26,7 +26,7 @@ $lang->percent   = '%';
 $lang->dash      = '-';
 $lang->and       = 'and';
 
-$lang->zentaoPMS      = 'ZenTao';
+$lang->zentaoPMS      = 'Gigalabs';
 $lang->pmsName        = 'ALM';
 $lang->proName        = 'Pro';
 $lang->bizName        = 'Biz';
